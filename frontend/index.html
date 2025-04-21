@@ -1,17 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>UptimeWatch</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
+  <div class="container" id="authSection">
+    <h1 id="authTitle">Login</h1>
+    <form id="authForm">
+      <input type="text" id="username" placeholder="Username" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <button type="submit" id="authBtn">Login</button>
+    </form>
+    <p id="togglePrompt">Don't have an account? <a href="#" id="toggleLink">Register here</a></p>
+  </div>
+
+  <div class="container" id="appSection" style="display: none;">
     <h1>UptimeWatch</h1>
     <input type="text" id="urlInput" placeholder="Enter website URL (e.g. https://example.com)">
     <button onclick="checkStatus()">Check Status</button>
     <p id="result"></p>
+    <button onclick="logout()" style="margin-top: 1rem;">Logout</button>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>
